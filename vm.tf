@@ -4,7 +4,7 @@ resource "google_compute_address" "public_ip" {
 }
 
 resource "google_compute_instance" "vm" {
-  name         = "ewa-web-ip"
+  name         = "ewa-web-vm"
   machine_type = var.machine_type
   zone         = var.zone
 
