@@ -36,16 +36,4 @@ resource "google_compute_firewall" "allow_web" {
   target_tags   = ["ewa-web"]
 }
 
-resource "google_compute_firewall" "allow_api" {
-  name    = "ewa-api"
-  network = google_compute_network.vpc.name
-
-  allow {
-    protocol = "tcp"
-    ports    = [tostring(var.api_port)]
-  }
-
-  source_ranges = ["0.0.0.0/0"]
-  target_tags   = ["ewa-api"]
-}
 
