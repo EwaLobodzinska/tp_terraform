@@ -1,5 +1,5 @@
 resource "google_compute_address" "public_ip" {
-  name   = "ewa-web"
+  name   = "ewa-web-ip"
   region = var.region
 }
 
