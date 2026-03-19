@@ -1,10 +1,10 @@
 resource "google_compute_instance" "vm" {
   for_each     = "${var.web_port}"
-  name         = "ewa-${each.key}"
+  name         = "ewa-web-ip"
   machine_type = var.machine_type
   zone         = var.zone
 
-  tags = ["ewa-ssh", "ewa-${each.key}"]
+  tags = ["ewa-ssh", "ewa-web-ip"]
 
   boot_disk {
     initialize_params {
@@ -19,7 +19,7 @@ resource "google_compute_instance" "vm" {
   network_interface {
     subnetwork = google_compute_subnetwork.subnet.id
     access_config {
-      nat_ip = google_compute_address.public_ip[each.key].address
+      nat_ip = google_compute_address.public_ip.address
     }
   }
 }
