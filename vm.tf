@@ -1,5 +1,5 @@
 resource "google_compute_address" "public_ip" {
-  name   = "ewa-web-ip"
+  name   = "ewa-web"
   region = var.region
 }
 
@@ -8,7 +8,7 @@ resource "google_compute_instance" "vm" {
   machine_type = var.machine_type
   zone         = var.zone
 
-  tags = ["ewa-ssh", "ewa-web-ip"]
+  tags = ["ewa-ssh", "ewa-web"]
 
   boot_disk {
     initialize_params {

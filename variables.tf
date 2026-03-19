@@ -24,7 +24,7 @@ variable "machine_type" {
 
 variable "web_port" {
   type    = number
-  default = 8080
+  default = 80
 }
 
 variable "api_port" {
