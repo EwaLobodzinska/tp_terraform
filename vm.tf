@@ -4,7 +4,6 @@ resource "google_compute_address" "public_ip" {
 }
 
 resource "google_compute_instance" "vm" {
-  for_each     = "${var.web_port}"
   name         = "ewa-web-ip"
   machine_type = var.machine_type
   zone         = var.zone
