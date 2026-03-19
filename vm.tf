@@ -1,3 +1,8 @@
+resource "google_compute_address" "public_ip" {
+  name   = "ewa-web-ip"
+  region = var.region
+}
+
 resource "google_compute_instance" "vm" {
   for_each     = "${var.web_port}"
   name         = "ewa-web-ip"
